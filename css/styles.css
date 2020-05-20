@@ -8,6 +8,18 @@ h1 {
 	font-size: 1.2rem;
 	font-weight: 600;
 	margin-top: 2rem;
+	text-align: center;
+}
+
+h2 {
+	color: #404A50;
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin: auto;
+}
+
+#overlay > div > div > h2 {
+margin: 20px auto 8px auto
 }
 
 p {
@@ -15,20 +27,26 @@ p {
 	color: #B2B5B8;
 }
 
+#overlay > div > div > p {
+	margin: 8px;
+	font-size: 0.9rem;
+}
+
 .employee-image {
 	border-radius: 50%;
 	margin-right: 1rem;
+	width: 5rem;
 }
 
 .employee {
 	display: flex;
 	border: 2px solid #DFDFDF;
 	border-radius: 5px;
-	width: 300px;
+	max-width: 250px;
+	flex-grow: 1;
 	margin: 1rem;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 	background-color: #fff;
-	word-wrap: break-word;
 }
 
 .employees {
@@ -36,6 +54,10 @@ p {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+}
+
+.employee-data {
+	margin: auto 10px auto 0;
 }
 
 body {
@@ -49,51 +71,43 @@ main {
 	align-items: center;
 }
 
-
-/* The Modal (background) */
+.line {
+    border-top: 1px solid #DADADA;
+	width: 100%;
+	margin: 25px 0;
+}
 
 .modal {
 	display: none;
-	/* Hidden by default */
 	position: fixed;
-	/* Stay in place */
 	z-index: 1;
-	/* Sit on top */
-	padding-top: 100px;
-	/* Location of the box */
 	left: 0;
 	top: 0;
 	width: 100%;
-	/* Full width */
 	height: 100%;
-	/* Full height */
 	overflow: auto;
-	/* Enable scroll if needed */
 	background-color: rgb(0, 0, 0);
-	/* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4);
-	/* Black w/ opacity */
 }
-
-
-/* Modal Content */
 
 .modal-content {
+	display: flex;
+	flex-direction: column;
 	background-color: #fefefe;
 	margin: auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
+	padding: 5px 20px 20px 20px;
+	border: 2px solid #DFDFDF;
+	border-radius: 10px;
+	min-width: 25%;
 }
-
-
-/* The Close Button */
 
 .close {
 	color: #aaaaaa;
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
+	margin-left: auto;
+	transition-duration: .3s;
 }
 
 .close:hover,
@@ -103,15 +117,52 @@ main {
 	cursor: pointer;
 }
 
-@media (min-width: 768px) {
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture-large {
+border-radius: 50%;
+}
+
+@media (min-width: 320px) {
+	.employees {
+		width: 95%;
+	}
+
+	.employee-image {
+		width: 5rem;
+	}
+
 	.employee {
 		display: flex;
 		border: 2px solid #DFDFDF;
 		border-radius: 5px;
-		width: 400px;
-		flex-basis: 400px;
+		width: 300px;
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.employees {
+		width: 87%;
+	}
+
+	.employee {
+		display: flex;
+		border: 2px solid #DFDFDF;
+		border-radius: 5px;
+		width: 300px;
 		margin: 1rem;
-		padding: 1rem;
+		flex-basis: 300px;
 		background-color: #fff;
 	}
+
+	.employee-image {
+		width: 6rem;
+	}
+
 }

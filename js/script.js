@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Variables
   const employee = document.querySelectorAll('.employee');
-  const employees = document.querySelectorAll('.employees');
-  const modal = document.getElementById("myModal");
+  const modal = document.querySelector("#overlay");
   const modalContent = document.querySelector(".modal-content");
   let results = [];
 
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           employeeData += `
       <img class="employee-image" alt="image" src="${results[i].picture.large}">
       <div class="employee-data">
-        <h4>${results[i].name.first + ' ' + results[i].name.last}</h4>
+        <h2>${results[i].name.first + ' ' + results[i].name.last}</h2>
         <p>${results[i].email}</p>
         <p class="city">${results[i].location.city}</p>
       </div>
@@ -47,11 +46,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let birthday = dobChangeFormat(dob);
       let employeeInfo = `
   <span class="close">&times;</span>
-  <img class="profile-pic-lg" alt="profile picture" src="${results[id].picture.large}">
-  <h4>${results[id].name.first + ' ' + results[id].name.last}</h4>
+  <div class="modal-info"><img class="profile-picture-large" alt="profile picture" src="${results[id].picture.large}">
+  <h2>${results[id].name.first + ' ' + results[id].name.last}</h2>
   <p>${results[id].email}</p>
   <p class="city">${results[id].location.city}</p>
-  <hr>
+  <div class="line"></div>
   <p class="phone">${results[id].cell.replace(')-', ') ')}</p>
   <p class="address">
     ${results[id].location.street.number + ' ' + 
@@ -59,6 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     results[id].location.state + ' ' +
     results[id].location.postcode}</p>
   <p class="birthday">Birthday: ${birthday}</p>
+  </div>
 `;
       modalContent.innerHTML = employeeInfo;
 

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
 
   // Open modal and pass the id
-  for (var i = 0; i < employee.length; i += 1) {
+  for (let i = 0; i < employee.length; i += 1) {
       ((id) => {
           employee[i].onclick = () => {
               modal.style.display = 'flex';
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 `;
       modalContent.innerHTML = employeeInfo;
 
-      // Add event listener to close modal
+      // Add event listener to close the modal
       const close = document.querySelector('.close');
 
       close.addEventListener('click', () => {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
   }
 
-  // Change the dob format to dd/mm/yyy
+  // Change the dob format to dd/mm/yyyy
   dobChangeFormat = (dob) => {
       let day = dob.slice(8, 10);
       let month = dob.slice(5, 7);
